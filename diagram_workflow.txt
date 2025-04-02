@@ -1,0 +1,42 @@
+                ┌────────────────────────┐
+                │    Streamlit UI        │
+                │  (User Input & Output) │
+                └────────▲───────────────┘
+                         │
+                         ▼
+                ┌────────────────────────┐
+                │    Text Preprocessing   │
+                │  (Chunking & Cleaning)  │
+                └────────▲───────────────┘
+                         │
+                         ▼
+       ┌────────────────────────────────────┐
+       │       Check FAISS Vector DB        │
+       │  (Retrieve Similar Translations)   │
+       └──────────▲───────────────┬────────┘
+                  │               │
+        Translation Found?     Not Found?
+                  │               ▼
+                  │      ┌────────────────────┐
+                  │      │  OpenAI GPT-4 LLM  │
+                  │      │  (Formal, Context- │
+                  │      │  Aware Translation)│
+                  │      └────────▲──────────┘
+                  │               │
+                  ▼               ▼
+      ┌──────────────────────────────┐
+      │   Store in FAISS Vector DB   │
+      │   (Efficient Future Lookup)  │
+      └───────────┬──────────────────┘
+                  │
+                  ▼
+      ┌────────────────────────┐
+      │   Display Translation  │
+      │  (Streamlit Output)    │
+      └──────────▲─────────────┘
+                 │
+                 ▼
+      ┌────────────────────────┐
+      │  Optional: TTS Output  │
+      │  (Convert to Speech)   │
+      └────────────────────────┘
